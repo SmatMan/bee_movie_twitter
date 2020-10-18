@@ -9,8 +9,12 @@ auth.set_access_token(cfg.at, cfg.ats)
 api = tweepy.API(auth)
 
 with open('script.txt') as f:
-   for line in f:
-       api.update_status(line)
-       time.sleep(60)
+    for line in f:
+        try:
+            api.update_status(line)
+            print(f"Sent {line} successfully")
+        except:
+            print("Could not send line '" + line + "'")
+        time.sleep(60)
 
 
