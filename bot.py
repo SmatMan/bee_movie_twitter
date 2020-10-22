@@ -13,8 +13,14 @@ with open('script.txt') as f:
         try:
             api.update_status(line)
             print(f"Sent {line} successfully")
-        except:
+        except Exception as e:
             print("Could not send line '" + line + "'")
+            print(str(e))
         time.sleep(60)
+
+print("")
+print("")
+print("")
+print("NGL WE KINDA DONE 🎉😳")
 
 
